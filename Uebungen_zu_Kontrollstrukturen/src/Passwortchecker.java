@@ -10,7 +10,7 @@ public class Passwortchecker {
 	}
 	
 	
-	public static boolean passwortChecker(String passwort)
+	public static void passwortChecker(String passwort)
 	{
 		System.out.println(passwort);
 		charArray = passwort.toCharArray();
@@ -25,7 +25,6 @@ public class Passwortchecker {
 		{
 			System.out.println("Dein Passwort ist NICHT sicher!");
 		}
-			return true;
 	}
 	
 	
