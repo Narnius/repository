@@ -6,32 +6,34 @@ public class Passwortchecker {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		passwortChecker("Patz2Wrot");
+		passwortChecker("l0l");
 	}
 	
 	
 	public static boolean passwortChecker(String passwort)
 	{
+		System.out.println(passwort);
+		charArray = passwort.toCharArray();
+		System.out.println(charArray[2] + " ist das dritte Zeichen des Passwortes");
+		System.out.println();
+		
 		if (verschachtelung())
 		{
 			System.out.println("Dein Passwort ist sicher!");
 		}
-		
-		
-		System.out.println(passwort);
-		charArray = passwort.toCharArray();
-		System.out.println(charArray[2]);
-		System.out.println();
-		
-
-			return true;
+		else
+		{
+			System.out.println("Dein Passwort ist NICHT sicher!");
 		}
+			return true;
+	}
 	
 	
 	public static boolean verschachtelung()
 	{
 		if (laenge() == false)
 		{
+			
 		 	return false;
 		}
 		
