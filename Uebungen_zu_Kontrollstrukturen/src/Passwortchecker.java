@@ -6,7 +6,7 @@ public class Passwortchecker {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		passwortChecker("l0l");
+		passwortChecker("eeeeereee");
 	}
 	
 	
@@ -14,7 +14,6 @@ public class Passwortchecker {
 	{
 		System.out.println(passwort);
 		charArray = passwort.toCharArray();
-		System.out.println(charArray[2] + " ist das dritte Zeichen des Passwortes");
 		System.out.println();
 		
 		if (verschachtelung())
@@ -32,27 +31,14 @@ public class Passwortchecker {
 	{
 		if (laenge() == false)
 		{
-			
+			System.out.println("Dein Passwort ist NICHT lang genug, es braucht mindestens 8 Zeichen!");
 		 	return false;
 		}
 		
-		if (großbuchstabeVorhanden())
+		if (kleinbuchstabeVorhanden() && großbuchstabeVorhanden())
 		{
 			erfullteBedingungen = erfullteBedingungen + 1;
 	    }
-		else
-		{
-			System.out.println("Füge mindestens einen Großbuchstaben hinzu!");
-		}
-		
-		if (kleinbuchstabeVorhanden())
-		{
-			erfullteBedingungen = erfullteBedingungen + 1;
-	    }
-		else
-		{
-			System.out.println("Füge mindestens einen Kleinbuchstaben hinzu!");
-		}
 		
 		if (zifferVorhanden())
 		{
@@ -72,7 +58,7 @@ public class Passwortchecker {
 			System.out.println("Füge mindestens ein Sonderzeichen hinzu!");
 		}
 		
-		if (erfullteBedingungen >= 3)
+		if (erfullteBedingungen >= 2)
 		{
 		 	return true;
 		}
@@ -117,6 +103,7 @@ public class Passwortchecker {
 			}
 				else
 			{
+				System.out.println("Füge mindestens einen Großbuchstaben hinzu!");
 				return false;
 		    }
 		
@@ -142,6 +129,7 @@ public class Passwortchecker {
 			}
 				else
 			{
+				System.out.println("Füge mindestens einen Kleinbuchstaben hinzu!");
 				return false;
 		    }
 		
