@@ -6,7 +6,7 @@ public class Passwortchecker {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		passwortChecker("eeeeereee");
+		passwortChecker("----------");
 	}
 	
 	
@@ -34,6 +34,18 @@ public class Passwortchecker {
 			System.out.println("Dein Passwort ist NICHT lang genug, es braucht mindestens 8 Zeichen!");
 		 	return false;
 		}
+		
+		if (!kleinbuchstabeVorhanden())
+		{
+			System.out.println("Füge mindestens einen Kleinbuchstaben hinzu!");
+			erfullteBedingungen = erfullteBedingungen + 1;
+	    }
+		
+		if (!großbuchstabeVorhanden())
+		{
+			System.out.println("Füge mindestens einen Großbuchstaben hinzu!");
+			erfullteBedingungen = erfullteBedingungen + 1;
+	    }
 		
 		if (kleinbuchstabeVorhanden() && großbuchstabeVorhanden())
 		{
@@ -92,7 +104,7 @@ public class Passwortchecker {
 			{
 				if (Character.isUpperCase(charArray[i]))
 				{
-					//System.out.println(charArray[i] + " ist GROß!");
+					System.out.println(charArray[i] + " ist GROß!");
 					anzahlGroßbuchstaben = anzahlGroßbuchstaben + 1;
 				}
 				
@@ -103,7 +115,6 @@ public class Passwortchecker {
 			}
 				else
 			{
-				System.out.println("Füge mindestens einen Großbuchstaben hinzu!");
 				return false;
 		    }
 		
@@ -118,7 +129,7 @@ public class Passwortchecker {
 			{
 				if (Character.isLowerCase(charArray[i]))
 				{
-					//System.out.println(charArray[i] + " ist klein!");
+					System.out.println(charArray[i] + " ist klein!");
 					anzahlKleinbuchstaben = anzahlKleinbuchstaben + 1;
 				}
 				
@@ -129,7 +140,6 @@ public class Passwortchecker {
 			}
 				else
 			{
-				System.out.println("Füge mindestens einen Kleinbuchstaben hinzu!");
 				return false;
 		    }
 		
