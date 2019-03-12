@@ -1,28 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
 public class Harshadzahlrechner {
 	
-	static 
-	static int jot = 10;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arrayEins;
+		harshad(100);
 	}
 
-	public static void rechner()
+	public static int quersumme(int zahl)
 	{
-		while ( jot <= 100)
+		if(zahl<=9) return zahl;
+		return zahl % 10 + quersumme(zahl/10);
+	}
+
+
+	public static void harshad(int ende)
+	{
+		int ergebnis;
+		for(int i = 10; i<=ende ; i++)
 		{
-			List<Integer> ziffernTrennung = new ArrayList<Integer>(); //Array, welches die Ziffern einzeln speichern soll.
-			ziffernTrennung.add(jot); 
-			jot = jot + 1;
-		}
-		
-		for (Integer i = 1; i <= 100; i++)
-		{
-			if ((2 % 3) == 0)
+			if(i % quersumme(i) == 0)
+			{
+				ergebnis = i / quersumme(i);
+				System.out.print( "  " + i);
+				System.out.println("       Ergebnis der Rechnung = " + ergebnis );
+				System.out.println("");
+			}
 		}
 	}
 
+	
 }
